@@ -11,6 +11,7 @@ RUN apt-get update -y && apt-get install software-properties-common -y && \
     add-apt-repository -y multiverse && apt-get update -y && apt-get upgrade -y && \
     apt-get install -y apt-utils nano vim man build-essential wget sudo && \
     rm -rf /var/lib/apt/lists/*
+RUN apt-get --fix-broken install -y python-pycurl python-apt
 
 # Install curl and other dependencies
 RUN apt-get update -y && apt-get install -y curl libssl-dev openssl libopenblas-dev \
